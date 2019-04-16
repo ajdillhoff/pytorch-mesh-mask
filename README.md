@@ -15,3 +15,16 @@ To install the PyTorch extension, run `python setup.py install` under the `exten
 # Running
 
 `python run.py`
+
+# Output
+
+The output demonstrates the issue of accessing tensors from GPU.
+
+    **CPU**
+    Compute time: 0.03938102722167969s
+    Access time: 0.026835918426513672s
+    **CUDA**
+    Compute time: 0.0003864765167236328s
+    Access time: 1.0503544807434082s
+
+Why is the access time for the CUDA version so much longer?
