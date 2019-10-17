@@ -180,7 +180,7 @@ std::vector<torch::Tensor> compute_mesh_mask_forward(
     auto options = torch::TensorOptions()
         .dtype(torch::kInt32)
         .layout(torch::kStrided)
-        .device(torch::kCUDA, 0)
+        .device(vertices.device())
         .requires_grad(false);
     auto z_buffer = torch::ones({batch_size, image_height * image_width}, vertices.type());
     auto mesh_mask = torch::zeros({batch_size, num_vertices}, options);
